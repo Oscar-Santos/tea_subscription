@@ -1,24 +1,194 @@
-# README
+# Tea Subscription
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Overview
+This app creates a Rails API for a tea subscription service. There are 3 endpoints: to get a list of subscriptions, to create a sbuscription and to cancel a subscription
 
-Things you may want to cover:
+#### Database
+![tea_subscription_db](https://user-images.githubusercontent.com/83252572/190515705-cc3ec9eb-8bd5-488d-83c0-d0af32e9abc1.png)
 
-* Ruby version
+#### Set Up
+`bundle install` <br>
+`rails db:{create,migrate,seed}` <br>
+`bundle exec rspec`
 
-* System dependencies
+#### Framework
+<p>
+  <img src="https://img.shields.io/badge/Ruby%20On%20Rails-b81818.svg?&style=flat&logo=rubyonrails&logoColor=white" />
+</p>
 
-* Configuration
+#### Languages
+<p>
+  <img src="https://img.shields.io/badge/Ruby-CC0000.svg?&style=flaste&logo=ruby&logoColor=white" />
+</p>
 
-* Database creation
+#### Tools
+<p>
+  <img src="https://img.shields.io/badge/Atom-66595C.svg?&style=flaste&logo=atom&logoColor=white" />  
+  <img src="https://img.shields.io/badge/Git-F05032.svg?&style=flaste&logo=git&logoColor=white" />
+  <img src="https://img.shields.io/badge/GitHub-181717.svg?&style=flaste&logo=github&logoColor=white" />
+  </br>
+  <img src="https://img.shields.io/badge/Postman-FF6E4F.svg?&style=flat&logo=postman&logoColor=white" />
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1.svg?&style=flaste&logo=postgresql&logoColor=white" />
+</p>
 
-* Database initialization
+#### Gems
+<p>
+  <img src="https://img.shields.io/badge/rspec--rails-b81818.svg?&style=flaste&logo=rubygems&logoColor=white" />
+  <img src="https://img.shields.io/badge/pry-b81818.svg?&style=flaste&logo=rubygems&logoColor=white" />  
+  <img src="https://img.shields.io/badge/simplecov-b81818.svg?&style=flaste&logo=rubygems&logoColor=white" />  
+</p>
 
-* How to run the test suite
+#### Development Principles
+<p>
+  <img src="https://img.shields.io/badge/OOP-b81818.svg?&style=flaste&logo=OOP&logoColor=white" />
+  <img src="https://img.shields.io/badge/TDD-b87818.svg?&style=flaste&logo=TDD&logoColor=white" />
+  <img src="https://img.shields.io/badge/MVC-b8b018.svg?&style=flaste&logo=MVC&logoColor=white" />
+  <img src="https://img.shields.io/badge/REST-33b818.svg?&style=flaste&logo=REST&logoColor=white" />  
+</p>
 
-* Services (job queues, cache servers, search engines, etc.)
+## Endpoints
 
-* Deployment instructions
+#### Request
+`GET /api/v1/customers/1/subscriptions`
+#### Response
+```json
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "subscription",
+            "attributes": {
+                "customer_id": 1,
+                "tea_id": 1,
+                "title": "My Dongding Subscription",
+                "price": 5.75,
+                "status": "active",
+                "frequency": "monthly"
+            }
+        },
+        {
+            "id": "2",
+            "type": "subscription",
+            "attributes": {
+                "customer_id": 1,
+                "tea_id": 2,
+                "title": "My Shincha Subscription",
+                "price": 6.9,
+                "status": "canceled",
+                "frequency": "annually"
+            }
+        }
+    ]
+}
+```
 
-* ...
+#### Request
+`POST /api/v1/customers/1/subscriptions`
+##### Request Body
+```json
+    {
+      "customer_id": 1,
+      "tea_id": 1,
+      "title": "tea.title",
+      "price": 6.9,
+      "status": "active",
+      "frequency": "annually"
+    }
+```
+#### Response
+```json
+{
+    "data": {
+        "id": "4",
+        "type": "subscription",
+        "attributes": {
+            "customer_id": 1,
+            "tea_id": 1,
+            "title": "tea.title",
+            "price": 6.9,
+            "status": "active",
+            "frequency": "annually"
+        }
+    }
+}
+```
+
+#### Request
+`PATCH /api/v1/customers/:customer_id/subscriptions/:subscription_id`
+##### Request Body
+```json
+   { 
+   "status": "canceled" 
+   }
+```
+#### Response
+```json
+{
+    "data": {
+        "id": "4",
+        "type": "subscription",
+        "attributes": {
+            "customer_id": 1,
+            "tea_id": 1,
+            "title": "tea.title",
+            "price": 6.9,
+            "status": "canceled",
+            "frequency": "annually"
+        }
+    }
+}
+```
+
+#### Request
+`POST /api/v1/teas`
+##### Request Body
+```json
+   {
+      "title": "Really good tea",
+      "description": "Actually it is really good",
+      "temperature": 200,
+      "brew_time": 4
+    }
+```
+#### Response
+```json
+{
+    "data": {
+        "id": "4",
+        "type": "tea",
+        "attributes": {
+            "title": "Really good tea",
+            "description": "Actually it is really good",
+            "temperature": 200,
+            "brew_time": 4
+        }
+    }
+}
+```
+#### Request
+`POST /api/v1/customers`
+##### Request Body
+```json
+   {
+      "first_name": "Britney",
+      "last_name": "Spears",
+      "email": "email@someemail.com",
+      "address": "Somewhere in Los Angeles"
+    }
+```
+#### Response
+```json
+{
+   "data": {
+        "id": "4",
+        "type": "customer",
+        "attributes": {
+            "first_name": "Britney",
+            "last_name": "Spears",
+            "email": "email@someemail.com",
+            "address": "Somewhere in Los Angeles"
+        }
+    }
+}
+```
