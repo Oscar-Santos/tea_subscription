@@ -49,7 +49,7 @@ This app creates a Rails API for a tea subscription service. There are 3 endpoin
 
 ## Endpoints
 
-#### Request
+1)   #### Request
 `GET /api/v1/customers/1/subscriptions`
 #### Response
 ```json
@@ -83,7 +83,7 @@ This app creates a Rails API for a tea subscription service. There are 3 endpoin
 }
 ```
 
-#### Request
+2)    #### Request
 `POST /api/v1/customers/1/subscriptions`
 ##### Request Body
 ```json
@@ -100,7 +100,7 @@ This app creates a Rails API for a tea subscription service. There are 3 endpoin
 ```json
 {
     "data": {
-        "id": "4",
+        "id": "14",
         "type": "subscription",
         "attributes": {
             "customer_id": 1,
@@ -114,8 +114,8 @@ This app creates a Rails API for a tea subscription service. There are 3 endpoin
 }
 ```
 
-#### Request
-`PATCH /api/v1/customers/:customer_id/subscriptions/:subscription_id`
+3)  #### Request
+`PATCH /api/v1/customers/1/subscriptions/1`
 ##### Request Body
 ```json
    { 
@@ -140,55 +140,3 @@ This app creates a Rails API for a tea subscription service. There are 3 endpoin
 }
 ```
 
-#### Request
-`POST /api/v1/teas`
-##### Request Body
-```json
-   {
-      "title": "Really good tea",
-      "description": "Actually it is really good",
-      "temperature": 200,
-      "brew_time": 4
-    }
-```
-#### Response
-```json
-{
-    "data": {
-        "id": "4",
-        "type": "tea",
-        "attributes": {
-            "title": "Really good tea",
-            "description": "Actually it is really good",
-            "temperature": 200,
-            "brew_time": 4
-        }
-    }
-}
-```
-#### Request
-`POST /api/v1/customers`
-##### Request Body
-```json
-   {
-      "first_name": "Britney",
-      "last_name": "Spears",
-      "email": "email@someemail.com",
-      "address": "Somewhere in Los Angeles"
-    }
-```
-#### Response
-```json
-{
-   "data": {
-        "id": "4",
-        "type": "customer",
-        "attributes": {
-            "first_name": "Britney",
-            "last_name": "Spears",
-            "email": "email@someemail.com",
-            "address": "Somewhere in Los Angeles"
-        }
-    }
-}
-```
