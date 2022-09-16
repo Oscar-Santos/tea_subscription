@@ -140,7 +140,7 @@ This app creates a Rails API for a tea subscription service. There are 3 endpoin
 }
 ```
 
-#### Handling Errors
+#### Errors Handling
 
  #### Request
 `PATCH /api/v1/customers/1/subscriptions/1`
@@ -158,6 +158,10 @@ This app creates a Rails API for a tea subscription service. There are 3 endpoin
     "error": "invalid status"
 }
 ```
+
+#### Simplecov Test Coverage
+
+![Screen Shot 2022-09-15 at 6 09 36 PM](https://user-images.githubusercontent.com/83252572/190530007-3323e223-a83c-4e58-86e6-086d5672c84c.png)
 
 
 
