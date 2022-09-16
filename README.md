@@ -140,3 +140,24 @@ This app creates a Rails API for a tea subscription service. There are 3 endpoin
 }
 ```
 
+#### Handling Errors
+
+ #### Request
+`PATCH /api/v1/customers/1/subscriptions/1`
+
+##### Request Body
+```json
+   { 
+   "status": "transferred" 
+   }
+```
+
+#### Response
+```
+{
+    "error": "invalid status"
+}
+```
+
+
+
