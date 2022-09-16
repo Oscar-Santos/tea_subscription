@@ -4,7 +4,7 @@
 #### Overview
 This app creates a Rails API for a tea subscription service. There are 3 endpoints: to get a list of subscriptions, to create a subscription and to cancel a subscription
 
-#### Database
+#### Schema
 ![tea_subscription_db](https://user-images.githubusercontent.com/83252572/190515705-cc3ec9eb-8bd5-488d-83c0-d0af32e9abc1.png)
 
 #### Local Set Up
