@@ -165,5 +165,8 @@ This app creates a Rails API for a tea subscription service. There are 3 endpoin
 
 ![Screen Shot 2022-09-15 at 6 09 36 PM](https://user-images.githubusercontent.com/83252572/190530007-3323e223-a83c-4e58-86e6-086d5672c84c.png)
 
-
+#### Postman Link
+```
+![Screen Shot 2022-09-15 at 6 09 36 PM](https://www.getpostman.com/collections/4121fc243381bef29818)
+```
 
