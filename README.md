@@ -9,7 +9,7 @@ This app creates a Rails API for a tea subscription service. There are 3 endpoin
 
 #### Local Set Up
 - `fork` then `git clone` this repository
-- `cd tea_subsription_service` into the root directory
+- `cd tea_subsription` into the root directory
 - `bundle install` to install dependencies
 - `rails db:{create,migrate,seed}`
 - `rails s` to start your server on `localhost:3000`
