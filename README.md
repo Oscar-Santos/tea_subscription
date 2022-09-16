@@ -167,6 +167,6 @@ This app creates a Rails API for a tea subscription service. There are 3 endpoin
 
 #### Postman Link
 
-[](https://www.getpostman.com/collections/4121fc243381bef29818)
+[Postman Link for Endpoints](https://www.getpostman.com/collections/4121fc243381bef29818)
 
 
